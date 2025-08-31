@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>誤爆星人の館</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>誤爆Shop</h1>
+        <form action="{{ url_for('register')  }}" method="post">
+            <table border="1">
+                <tr>
+                    <th>発売日</th>
+                    <th>商品名</th>
+                    <th>価格</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="arrival_day"></td>
+                    <td><input type="text" name="title"></td>
+                    <td><input type="text" name="price"></td>
+                </tr>
+            </table>
+            <button type="submit">登録</button>
+        </form>
+    </body>
+</html>
