@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>誤爆星人の館</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>誤爆Shop</h1>
+        {% if productions == [] %}
+            <p>今月の新商品はありません</p>
+        {% else %}
+            <table border="1">
+                <tr>
+                    <th>発売日</th>
+                    <th>商品名</th>
+                    <th>価格</th>
+                </tr>
+                {% for production in productions %}
+                    <tr>
+                        <td>{{ production.arrival_day }}</td>
+                        <td>{{ production.title }}</td>
+                        <td>{{ production.price }}円</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+        <a href="{{ url_for('form') }}">商品登録</a>
+    </body>
+</html>
